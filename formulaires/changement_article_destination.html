@@ -1,0 +1,23 @@
+<div class="formulaire_spip formulaire_link_source" id="formulaire_link_source">
+<form method="get" action="#ENV{action}#form_wiki"><div>
+	#ACTION_FORMULAIRE{#ENV{action}}
+	<input type="hidden" name="objet" value="#ENV{objet}"/>
+	<input type="hidden" name="id_objet" value="#ENV{id_objet}"/>
+	<input type="hidden" name="type_lien" value="#ENV{type_lien}"/>
+	<input type="hidden" name="lang_dest" value="#ENV{lang_dest}"/>
+	<input type="hidden" name="lang" value="#ENV{lang}"/>
+	<label for="link_source"><:wiki_cso:choisir_lien_article:></label>
+
+	<select name="link_source" id="link_source" onchange="this.parentNode.parentNode.submit()">
+	[(#ENV{cacher_option_intro}|non)<option value="">[(#ENV{option_intro})]</option>]
+	<BOUCLE_groupes(POUR){tableau #ENV{articles}}{par cle}>
+		<optgroup label="[(#CLE|attribut_html|supprimer_numero)]">
+			<BOUCLE_selection(POUR){tableau #VALEUR}>
+				<option value="#CLE" [(#CLE|=={#ENV{link_source}}|oui) selected="selected"]>#VALEUR</option>
+			</BOUCLE_selection>
+		</optgroup>
+	</BOUCLE_groupes>
+	</select>				
+	<noscript><p class="boutons"><input type="submit" class="submit" value="&gt;&gt;" /></p></noscript>
+</div></form>
+</div>

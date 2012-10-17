@@ -1,0 +1,24 @@
+
+
+<div class="formulaire_spip formulaire_type_ressource" id="formulaire_type_ressource">
+<form method="get" action="#ENV{action}#form_wiki"><div>
+	#ACTION_FORMULAIRE{#ENV{action}}
+	<input type="hidden" name="objet" value="#ENV{objet}"/>
+	<input type="hidden" name="id_objet" value="#ENV{id_objet}"/>
+	<input type="hidden" name="link_source" value="#ENV{link_source}"/>
+	<input type="hidden" name="lang_dest" value="#ENV{lang_dest}"/>
+	<input type="hidden" name="lang" value="#ENV{lang}"/>
+	<input type="hidden" name="edition" value="#ENV{edition}"/>
+
+	<label for="type_lien"><:wiki_cso:ressource_type:></label>
+	<select name="type_lien" id="type_lien" onchange="this.parentNode.parentNode.submit()">
+	[(#ENV{cacher_option_intro}|non)<option value="">[(#ENV{option_intro})]</option>]
+	<BOUCLE_types(DATA){source tableau, #CONFIG{a2a/types_liaisons}}{cle!=ressource}>
+		<option value="#CLE" [(#CLE|=={#ENV{type_lien}}|oui) selected="selected"]>[(#VALEUR|_T)]</option>
+	</BOUCLE_types>
+	</select>				
+	<noscript><p class="boutons"><input type="submit" class="submit" value="&gt;&gt;" /></p></noscript>
+</div></form>
+</div>
+
+

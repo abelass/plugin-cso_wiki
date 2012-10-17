@@ -1,0 +1,35 @@
+<paquet
+	prefix="wiki_cso"
+	categorie="communication"
+	version="1.0.0"
+	etat="dev"
+	compatibilite="[3.0.4;3.0.*]"
+	logo=""
+	documentation=""
+	schema="1.2.4" 
+>
+	<nom>Wiki Cso-effectiveness</nom>
+
+	<auteur>My Chacra</auteur>
+
+	<licence>GNU/GPL</licence>
+	<necessite nom="geographie" compatibilite="[0.3.0;]" />
+    <necessite nom="cextras" compatibilite="[3.0.5;[" />	
+    <necessite nom="saisies" compatibilite="[1.26.5;[" />	
+    <necessite nom="notation" compatibilite="[2.0.4;[" />	
+    <necessite nom="a2a" compatibilite="[1.3.6;[" />	
+    <necessite nom="mcp1" compatibilite="[0.1.0;[" />	
+    <necessite nom="edition_pub" compatibilite="[1.0.0;[" />	
+    <necessite nom="taa" compatibilite="[1.3.2;[" />	
+    <necessite nom="multilang" compatibilite="[0.7.0;[" />	
+    <necessite nom="abus" compatibilite="[1.0.0;[" />	
+    <necessite nom="glossaire" compatibilite="[1.0.0;[" />	
+    <necessite nom="so" compatibilite="[1.0.0;[" />	
+    <necessite nom="faq" compatibilite="[2.1.21;[" />	
+    	
+	<pipeline nom="recuperer_fond" inclure="wiki_cso_pipelines.php" /> 	
+	<pipeline nom="formulaire_traiter" inclure="wiki_cso_pipelines.php" /> 	
+	<pipeline nom="formulaire_verifier" inclure="wiki_cso_pipelines.php" /> 	
+	<pipeline nom="formulaire_charger" inclure="wiki_cso_pipelines.php" /> 	
+	<pipeline nom="declarer_champs_extras" inclure="base/wiki_cso.php" />
+</paquet>

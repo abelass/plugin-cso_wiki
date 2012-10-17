@@ -1,0 +1,25 @@
+
+
+<div class="formulaire_spip formulaire_changement_lang" id="formulaire_changement_lang">
+<form method="get" action="#ENV{action}#form_wiki"><div>
+	#ACTION_FORMULAIRE{#ENV{action}}
+	<input type="hidden" name="objet" value="#ENV{objet}"/>
+	<input type="hidden" name="id_objet" value="#ENV{id_objet}"/>
+	<input type="hidden" name="link_source" value="#ENV{link_source}"/>
+	<input type="hidden" name="type_lien" value="#ENV{type_lien}"/>
+	<input type="hidden" name="lang_dest" value="#ENV{lang_dest}"/>
+	<input type="hidden" name="lang" value="#ENV{lang}"/>
+	
+	<label for="lang_dest"><:changer_langue_contribution:></label>
+	<select name="lang_dest" id="lang_dest" onchange="this.parentNode.parentNode.submit()">
+
+	<BOUCLE_langues(POUR){tableau #CONFIG{langues_proposees}|explode{','}}>
+
+	<option value='#VALEUR'[(#VALEUR|=={#ENV{lang_dest}}|oui)selected="selected"] dir="[(#VALEUR|lang_dir{ltr,rtl})]">&#91;#VALEUR&#93; [(#VALEUR|traduire_nom_langue)]</option>
+	
+		</BOUCLE_langues>
+	</select>
+	<noscript><p class="boutons"><input type="submit" class="submit" value="&gt;&gt;" /></p></noscript>
+</div></form>
+</div>
+

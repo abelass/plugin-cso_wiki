@@ -1,0 +1,24 @@
+<div class="formulaire_spip formulaire_configurer formulaire_#FORM">
+
+	<h3 class="titrem"><:wiki_cso:cfg_titre_parametrages:></h3>
+
+	[<p class="reponse_formulaire reponse_formulaire_ok">(#ENV*{message_ok})</p>]
+	[<p class="reponse_formulaire reponse_formulaire_erreur">(#ENV*{message_erreur})</p>]
+
+	<form method="post" action="#ENV{action}">
+	<div>
+		
+		#ACTION_FORMULAIRE{#ENV{action}}
+		<ul>
+		[(#SAISIE{selecteur_rubrique,rubriques_wiki,label=<:wiki_cso:rubriques_wiki:>,multiple=oui})]
+		
+		[(#SAISIE{selecteur_rubrique,rubriques_ressources_toolkit,label=<:wiki_cso:rubriques_ressources_toolkit:>,multiple=oui})]
+		
+		[(#SAISIE{selecteur_rubrique,rubriques_ressources_wiki,label=<:wiki_cso:rubriques_ressources_wiki:>,multiple=oui})]
+		</ul>
+
+		<input type="hidden" name="_meta_casier" value="wiki_cso" />
+		<p class="boutons"><span class="image_loading">&nbsp;</span><input type="submit" class="submit" value="<:bouton_enregistrer:>" /></p>
+	</div>
+	</form>
+</div>

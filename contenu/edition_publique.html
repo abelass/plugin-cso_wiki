@@ -1,0 +1,16 @@
+#CACHE{0}
+
+
+#SET{rubriques_wiki,(#CONFIG{wiki_cso/rubriques_ressources_wiki}|picker_selected{rubrique})}
+#SET{id_rubrique,3}  
+
+<BOUCLE_rubrique_wiki(ARTICLES){id_article=#ENV{link_source}}>
+	<BOUCLE_parent(RUBRIQUES){id_parent=#ID_RUBRIQUE}{id_rubrique IN #GET{rubriques_wiki}}>
+	#SET{id_rubrique,#ID_RUBRIQUE}	
+	</BOUCLE_parent>
+</BOUCLE_rubrique_wiki>
+
+
+	#FORMULAIRE_CHANGEMENT_LANGUE
+	#FORMULAIRE_EDITION_PUBLIQUE{#ENV{objet},#ENV{id_objet},#ENV{id_parent,#GET{id_rubrique}}}	
+	

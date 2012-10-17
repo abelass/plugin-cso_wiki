@@ -1,0 +1,32 @@
+#SET{langues_traduites,#ARRAY{0,1}}
+
+<BOUCLE_article(ARTICLES){id_article}>
+	<h2><:wiki_cso:langue_contribution:></h2>
+	<div class="lang_contrib">[#LANG] [(#LANG|traduire_nom_langue)]</div>
+	#SET{lang,#LANG}
+</BOUCLE_article>
+
+
+<div class="formulaire_spip formulaire_changement_lang" id="formulaire_changement_lang">
+<form method="get" action="[(#ENV{action}|parametre_url{edition,new})]#form_wiki"><div>
+	#ACTION_FORMULAIRE{#ENV{action}}
+	<input type="hidden" name="edition" value="new"/>
+	<input type="hidden" name="new" value="oui"/>
+	<input type="hidden" name="lier_trad" value="#ENV{id_article}"/>
+	<input type="hidden" name="id_parent" value="#ENV{id_parent}"/>
+		
+	
+	<label for="lang_dest"><:wiki_cso:traduire_contribution:></label>
+	<select name="lang_dest" id="lang_dest" onchange="this.parentNode.parentNode.submit()">
+	<option value="#"> </option>
+	<BOUCLE_langues(POUR){tableau #CONFIG{langues_proposees}|explode{','}}>
+	[(#VALEUR|in_array{#GET{langues_traduites}}|non)
+		<option value='#VALEUR' dir="[(#VALEUR|lang_dir{ltr,rtl})]">&#91;#VALEUR&#93; [(#VALEUR|traduire_nom_langue)]</option>
+		]
+	
+		</BOUCLE_langues>
+	</select>
+	<noscript><p class="boutons"><input type="submit" class="submit" value="&gt;&gt;" /></p></noscript>
+</div></form>
+</div>
+
