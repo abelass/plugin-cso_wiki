@@ -1,10 +1,12 @@
 <?php
 if (!defined("_ECRIRE_INC_VERSION")) return;
 
+// Les champs extras via le plugin cextras
+
 function wiki_cso_declarer_champs_extras($champs = array()) {
     
 
-  
+  // Table spip_articles
   $champs['spip_articles']['pays'] = array(
       'saisie' => 'pays',//Type du champ (voir plugin Saisies)
       'options' => array(
@@ -18,7 +20,8 @@ function wiki_cso_declarer_champs_extras($champs = array()) {
                         ),//Seuls les webmestres peuvent modifier
 				)
   );
-  
+ 
+  // Traitement spéciale suivant les rubriques -> pas très propre mais ça marche
    $titre='';
     if(_request('id_article')){
         $id_article=_request('id_article');
@@ -53,6 +56,22 @@ function wiki_cso_declarer_champs_extras($champs = array()) {
   }
   }
 
+  // Table spip_documents
+  
+   $champs['spip_documents']['related_info'] = array(
+      'saisie' => 'oui_non',//Type du champ (voir plugin Saisies)
+      'options' => array(
+            'nom' => 'related_info', 
+            'label' => _T('docs_rel'), 
+            'sql' => "varchar(10) NOT NULL DEFAULT ''",
+            'versionner' => false,
+            'restrictions'=>array(
+                'voir' => array('auteur' => ''),//Tout le monde peut voir
+                'modifier' => array('auteur' => ''),
+                        ),//Seuls les webmestres peuvent modifier
+                )
+  );
+ 
  
    return $champs;	
 }

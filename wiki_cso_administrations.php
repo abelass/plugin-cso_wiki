@@ -16,7 +16,7 @@ function wiki_cso_upgrade($nom_meta_base_version,$version_cible) {
   cextras_api_upgrade(wiki_cso_declarer_champs_extras(), $maj['1.2.1']);
   cextras_api_upgrade(wiki_cso_declarer_champs_extras(), $maj['1.2.2']);  
   cextras_api_upgrade(wiki_cso_declarer_champs_extras(), $maj['1.2.4']);  
-      
+  cextras_api_upgrade(wiki_cso_declarer_champs_extras(), $maj['1.3.1']);        
   include_spip('base/upgrade');
   maj_plugin($nom_meta_base_version, $version_cible, $maj);
   
