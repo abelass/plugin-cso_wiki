@@ -35,6 +35,8 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
     'extra_10_3'=>'Ce que disent les OSC sur le @titre@',
     'extra_11_3'=>'Pour aller plus loin',
 
+    //R
+     'ressource_type' => 'Type de ressource :',
 	
 	// T
 
