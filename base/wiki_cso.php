@@ -7,7 +7,7 @@ function wiki_cso_declarer_champs_extras($champs = array()) {
     
 
   // Table spip_articles
-  /*$champs['spip_articles']['pays'] = array(
+  $champs['spip_articles']['pays'] = array(
       'saisie' => 'pays',//Type du champ (voir plugin Saisies)
       'options' => array(
             'nom' => 'pays', 
@@ -19,7 +19,7 @@ function wiki_cso_declarer_champs_extras($champs = array()) {
 				'modifier' => array('auteur' => ''),
                         ),//Seuls les webmestres peuvent modifier
 				)
-  );*/
+  );
  
   // Traitement spéciale suivant les rubriques -> pas très propre mais ça marche
    $titre='';
