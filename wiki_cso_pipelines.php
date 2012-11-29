@@ -62,7 +62,7 @@ function wiki_cso_formulaire_charger($flux){
             $titre_rubriques[$id_rubrique]=extraire_multi(sql_getfetsel('titre','spip_rubriques','id_rubrique='.$id_rubrique));
             }
 
-        if(is_array($rubriques_wiki))$sql=sql_select('id_article,id_rubrique,titre,soustitre','spip_articles','statut='.sql_quote('publie').' AND id_rubrique IN ('.implode(',',$rubriques_wiki).') AND lang='.sql_quote($lang),'','titre');
+        if(is_array($rubriques_wiki))$sql=sql_select('id_article,id_rubrique,titre,soustitre','spip_articles','statut='.sql_quote('publie').' AND id_rubrique IN ('.implode(',',$rubriques_wiki).') AND lang='.sql_quote($lang).' AND id_article!=400','','titre');
         
         $articles=array();
         while($data=sql_fetch($sql)){
