@@ -1,18 +1,20 @@
 <li class="editer editer_link_source[ (#ENV{erreurs}|table_valeur{link_source}|oui)erreur][ (#GET{li_class})]"id="link_source">
        [<span class='erreur_message'>(#ENV{erreurs}|table_valeur{link_source})</span>]
 <label for="link_source"><:wiki_cso:choisir_lien_article:></label>
-    <select name="link_source" >
     [(#ENV{cacher_option_intro}|non)<option value="">[(#ENV{option_intro})]</option>]
     <BOUCLE_groupes(POUR){tableau #ENV{articles}}{par cle}>
-        <optgroup label="[(#CLE|attribut_html|supprimer_numero)]">
-            <BOUCLE_selection(POUR){tableau #VALEUR}>
-                <option value="#CLE" [(#CLE|=={#ENV{link_source}}|oui) selected="selected"]>#VALEUR</option>
-            </BOUCLE_selection>
-        </optgroup>
+       <BOUCLE_selection(POUR){tableau #VALEUR}>
+       #SET{length,#VALEUR|strlen}
+       <div class="icons">
+           [(#CHEMIN{images/IP[(#VALEUR|substr{0,-#GET{length}|moins{1}}|moins{1})]_w_text_[(#ENV{lang}|trim)].png}|image_reduire{70,*})]
+       <input type="radio" name="link_source" value="#CLE" [(#CLE|=={#ENV{link_source}}|oui) checked="checked"]>
+       </div>
+       </BOUCLE_selection>
     </BOUCLE_groupes>
-    </select>   
+
 </li> 
-<li class="editer editer_link_source[ (#ENV{erreurs}|table_valeur{type_lien}|oui)erreur][ (#GET{li_class})]"id="type_lien">
+
+<li class="editer editer_type_lien[ (#ENV{erreurs}|table_valeur{type_lien}|oui)erreur][ (#GET{li_class})]"id="type_lien">
      [<span class='erreur_message'>(#ENV{erreurs}|table_valeur{type_lien})</span>]  
     <label for="type_lien">
         <:wiki_cso:ressource_type:>

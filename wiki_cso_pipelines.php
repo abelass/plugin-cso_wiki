@@ -70,7 +70,7 @@ function wiki_cso_formulaire_charger($flux){
         }   
 
       
-    
+        $flux['data']['lang']=_request('lang');
         $flux['data']['articles']=$articles;
 		$flux['data']['lang_dest']= $lang_dest;
 		$flux['data']['link_source']=$link_source;
