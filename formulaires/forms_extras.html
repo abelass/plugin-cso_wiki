@@ -1,8 +1,9 @@
+<B_groupes>
 <li class="editer editer_link_source[ (#ENV{erreurs}|table_valeur{link_source}|oui)erreur][ (#GET{li_class})]"id="link_source">
        [<span class='erreur_message'>(#ENV{erreurs}|table_valeur{link_source})</span>]
 <label for="link_source"><:wiki_cso:choisir_lien_article:></label>
     [(#ENV{cacher_option_intro}|non)<option value="">[(#ENV{option_intro})]</option>]
-    <BOUCLE_groupes(POUR){tableau #ENV{articles}}{par cle}>
+    <BOUCLE_groupes(POUR){tableau #ENV{articles}}{par cle}{si #ENV{lier_trad}|non}>
        <BOUCLE_selection(POUR){tableau #VALEUR}>
        #SET{length,#VALEUR|strlen}
        <div class="icons">
@@ -13,7 +14,11 @@
     </BOUCLE_groupes>
 
 </li> 
+</B_groupes>
+   <li class="invisible"><input type="hidden" name="link_source" value="#ENV{link_source}"></li>
+<//B_groupes>
 
+<B_types>
 <li class="editer editer_type_lien[ (#ENV{erreurs}|table_valeur{type_lien}|oui)erreur][ (#GET{li_class})]"id="type_lien">
      [<span class='erreur_message'>(#ENV{erreurs}|table_valeur{type_lien})</span>]  
     <label for="type_lien">
@@ -22,13 +27,15 @@
            <img class="aide" width="16" height="16" title="help" alt="HELP" src="[(#CHEMIN{prive/themes/spip/images/aide-16.png})]">
 <span class="help"><:wiki_cso:explanation_ressource_type:></span>
 </em>
-
-        
+   
     </label>
     <select name="type_lien">
     [(#ENV{cacher_option_intro}|non)<option value="">[(#ENV{option_intro})]</option>]
-    <BOUCLE_types(DATA){source tableau, #CONFIG{a2a/types_liaisons}}{cle!=ressource}>
+    <BOUCLE_types(DATA){source tableau, #CONFIG{a2a/types_liaisons}}{cle!=ressource}{si #ENV{lier_trad}|non}>
         <option value="#CLE" [(#CLE|=={#ENV{type_lien}}|oui) selected="selected"]>[(#VALEUR|_T)]</option>
     </BOUCLE_types>
     </select>   
 </li>
+</B_types>
+    <li class="invisible"><input type="hidden" name="type_lien" value="#ENV{type_lien}"></li>
+<//B_types>

@@ -14,7 +14,8 @@
 	<input type="hidden" name="new" value="oui"/>
 	<input type="hidden" name="lier_trad" value="#ENV{id_article}"/>
 	<input type="hidden" name="id_parent" value="#ENV{id_parent}"/>
-		
+    <input type="hidden" name="type_lien" value="#ENV{type_lien}"/>  
+    <input type="hidden" name="link_source" value="#ENV{link_source}"/>         		
 	
 	<label for="lang_dest"><:wiki_cso:traduire_contribution:></label>
 	<select name="lang_dest" id="lang_dest" onchange="this.parentNode.parentNode.submit()">
