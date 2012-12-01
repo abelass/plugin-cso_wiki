@@ -6,8 +6,8 @@
     <BOUCLE_groupes(POUR){tableau #ENV{articles}}{par cle}{si #ENV{lier_trad}|non}>
        <BOUCLE_selection(POUR){tableau #VALEUR}>
        #SET{length,#VALEUR|strlen}
-       <div class="icons">
-           [(#CHEMIN{images/IP[(#VALEUR|substr{0,-#GET{length}|moins{1}}|moins{1})]_w_text_[(#ENV{lang}|trim)].png}|image_reduire{70,*})]
+       <div class="icons" >
+           [(#CHEMIN{images/IP[(#VALEUR|substr{0,-#GET{length}|moins{1}}|moins{1})]_w_text_[(#ENV{lang}|trim)].png}|image_reduire{125,*})]
        <input type="radio" name="link_source" value="#CLE" [(#CLE|=={#ENV{link_source}}|oui) checked="checked"]>
        </div>
        </BOUCLE_selection>
