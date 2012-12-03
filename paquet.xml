@@ -1,7 +1,7 @@
 <paquet
 	prefix="wiki_cso"
 	categorie="communication"
-	version="1.1.0"
+	version="1.2.0"
 	etat="dev"
 	compatibilite="[3.0.4;3.0.*]"
 	logo=""
@@ -30,6 +30,9 @@
 	<pipeline nom="recuperer_fond" inclure="wiki_cso_pipelines.php" /> 	
 	<pipeline nom="formulaire_traiter" inclure="wiki_cso_pipelines.php" /> 	
 	<pipeline nom="formulaire_verifier" inclure="wiki_cso_pipelines.php" /> 	
+	<pipeline nom="jquery_plugins" inclure="wiki_cso_pipelines.php" /> 	
+	<pipeline nom="insert_head_css" inclure="wiki_cso_pipelines.php" /> 		
 	<pipeline nom="formulaire_charger" inclure="wiki_cso_pipelines.php" /> 	
 	<pipeline nom="declarer_champs_extras" inclure="base/wiki_cso.php" />
+
 </paquet>

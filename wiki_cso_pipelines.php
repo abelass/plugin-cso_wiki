@@ -161,6 +161,21 @@ function wiki_cso_formulaire_traiter($flux){
 	return $flux ;
 }
 
+function wiki_cso_jquery_plugins($scripts){
+    $s = array(
+    "javascript/jquery.jscrollpane.min.js",
+    "javascript/jquery.mousewheel.js",
+    "javascript/mwheelIntent.js");
+    
+    $scripts=array_merge($scripts,$s);
 
+    return $scripts;
+}
+
+function wiki_cso_insert_head_css($flux) {
+    $css = find_in_path('css/jquery.jscrollpane.css');
+    $flux .= "<link rel='stylesheet' type='text/css' media='all' href='$css' />\n";
+    return $flux;
+}
 
 ?>
