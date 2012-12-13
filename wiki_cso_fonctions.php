@@ -16,6 +16,7 @@ function is_wiki($id_rubrique,$options=''){
     $rubriques_wiki_config=lire_config('wiki_cso/rubriques_wiki');
     
    if(function_exists('picker_selected')) $rubriques_wiki=picker_selected($rubriques_wiki_config,'rubrique');
+   else $rubriques_wiki=array();
 
     if($options=='array')return $rubriques_wiki;
     elseif($rubriques_wiki AND $id_rubrique) return sql_getfetsel("id_rubrique",'spip_rubriques','id_rubrique='.$id_rubrique.' AND id_secteur IN ('.implode(',',$rubriques_wiki).')');
