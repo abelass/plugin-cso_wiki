@@ -155,7 +155,7 @@ function wiki_cso_formulaire_traiter($flux){
 		}
            $url_retour=parametre_url(generer_url_entite($id_article,'article'),'edition','mod','&'); 
                  
-           header("location:/$url_retour");
+          header("location:/$url_retour");
 	}
 	
 	return $flux ;
