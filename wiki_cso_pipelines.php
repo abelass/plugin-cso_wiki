@@ -25,7 +25,7 @@ function wiki_cso_recuperer_fond($flux){
 		
 		$id_parent=$contexte['id_parent'];
 
-
+        
 		$patterns = array(
 		  "#\<li class=\"editer editer_parent\"\>(.+?)\<\/li\>#s",
 		  "#\<li class=\"editer editer_soustitre\"\>(.+?)\<\/li\>#s",
@@ -33,7 +33,7 @@ function wiki_cso_recuperer_fond($flux){
 		$form_id_parent='<li class="invisible"><input type="hidden" name="id_parent" value="'.$id_parent.'"/></li>';
         $forms_extras=recuperer_fond('formulaires/forms_extras',$contexte);
 	    
-		$replacements = array($form_id_parent, $forms_extras);						
+		$replacements = array('', $forms_extras.$form_id_parent);						
 		$flux['data']['texte'] = preg_replace($patterns,$replacements,$texte,1);
 		
 
