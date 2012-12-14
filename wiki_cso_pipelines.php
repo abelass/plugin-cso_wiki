@@ -153,9 +153,10 @@ function wiki_cso_formulaire_traiter($flux){
                  sql_updateq('spip_articles',array('id_rubrique'=>$id_rubrique),'id_article='.$id_article);   
                 
 		}
-           $url_retour=parametre_url(generer_url_entite($id_article,'article'),'edition','mod','&'); 
-                 
-          header("location:/$url_retour");
+           //$url_retour=parametre_url(generer_url_entite($id_article,'article'),'edition','mod','&'); 
+           $url_retour=generer_url_public('article','id_article='.$id_article.'&edition=mod&message_ok='.$flux['data']['message_ok'],true);              
+         if(!_request('id_article')) header("location:/$url_retour");
+         $flux['data']['editable']=true;
 	}
 	
 	return $flux ;
