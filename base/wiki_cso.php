@@ -29,7 +29,7 @@ function wiki_cso_declarer_champs_extras($champs = array()) {
         $titre=$sql['titre'];
         $id_rubrique=$sql['id_rubrique'];
         }
-    if($id_rubrique==2) $c= array('extra_1','extra_2','extra_3','extra_4','extra_5','extra_6','extra_7','extra_8','extra_9','extra_10');
+    if($id_rubrique==2 OR $id_rubrique=13) $c= array('extra_1','extra_2','extra_3','extra_4','extra_5','extra_6','extra_7','extra_8','extra_9','extra_10');
     if($id_rubrique==3) $c= array('extra_1','extra_2','extra_3','extra_4','extra_5','extra_6','extra_7','extra_8','extra_9','extra_10','extra_11');    
     //if(in_array($id_rubrique,array(2,3))){
   
@@ -46,7 +46,7 @@ if (is_array($c)){
             'traitements' => '_TRAITEMENT_TYPO',
             'recherche' => true,                                   
             'restrictions'=>array(
-                'rubrique' => '2:3', 
+                'rubrique' => '2:3:13', 
                 'voir' => array('auteur' => ''),//Tout le monde peut voir
                 'modifier' => array('auteur' => ''),
                         ),//Seuls les webmestres peuvent modifier
