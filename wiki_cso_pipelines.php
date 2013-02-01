@@ -7,9 +7,6 @@
 
 if (!defined('_ECRIRE_INC_VERSION')) return;
 
-
-
-
 function wiki_cso_recuperer_fond($flux){
 
 	$fond=$flux['args']['fond'] ;
@@ -42,7 +39,6 @@ function wiki_cso_recuperer_fond($flux){
 
  return $flux;   
 }
-
 
 function wiki_cso_formulaire_charger($flux){
     $form = $flux['args']['form'];
@@ -107,7 +103,6 @@ function wiki_cso_formulaire_verifier($flux){
     
     return $flux ;
 }
-
 
 function wiki_cso_formulaire_traiter($flux){
     $form = $flux['args']['form'];
