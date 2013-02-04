@@ -17,8 +17,13 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'cfg_exemple_explication' => 'Explication de cet exemple',
 	'cfg_titre_parametrages' => 'Configuration',
 	
+
     //E
-    'explanation_ressource_type'=>'Here comes my explanation',   
+    'explanation_ressource_type'=>'Here comes my explanation',
+    'extra_1_13'=>'Por qué es importante',
+    'extra_2_13'=>'Membresía',
+    'extra_3_13'=>'Actividades',
+    'extra_4_13'=>'Documentos Clave',       
     'extra_1_2'=>'Normas mínimas para una sociedad civil eficaz',
     'extra_2_2'=>'Condiciones cruciales que favorecen la eficacia del desarrollo de las OSC: Políticas y prácticas gubernamentales',
     'extra_3_2'=>'Paso 1 contextualizar la eficacia del desarrollo de las OSC ',

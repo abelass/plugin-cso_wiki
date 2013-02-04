@@ -5,14 +5,15 @@ if (!defined('_ECRIRE_INC_VERSION')) return;
  
 $GLOBALS[$GLOBALS['idx_lang']] = array(
 
-
-
-
 	// C
 	'choisir_lien_article' => 'Resource linked to:',
 	
     //E
-    'explanation_ressource_type'=>'Here comes my explanation',   
+    'explanation_ressource_type'=>'Here comes my explanation',
+    'extra_1_13'=>'Pourquoi est-il important',
+    'extra_2_13'=>'Composition',
+    'extra_3_13'=>'Activités',
+    'extra_4_13'=>'Documentation Clé',          
     'extra_1_2'=>'Normes minimales ou conditions préalables à une société civile efficace',
     'extra_2_2'=>'Conditions indispensables pour une contribution efficace des OSC au developpement politiques et pratiques des gouvernements ',
     'extra_3_2'=>'1ere étape placer l’efficacité de la contribution des OSC au développement dans son contexte',
