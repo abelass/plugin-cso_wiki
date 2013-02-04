@@ -18,7 +18,11 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'cfg_titre_parametrages' => 'Configuration',
 	
     //E
-    'explanation_ressource_type'=>'Here comes my explanation',   
+    'explanation_ressource_type'=>'Here comes my explanation',
+    'extra_1_13'=>'Why is it important',
+    'extra_2_13'=>'Members',
+    'extra_3_13'=>'Activities',
+    'extra_4_13'=>'Key documentation',
     'extra_1_2'=>'Minimum standards for effective civil society',
     'extra_2_2'=>'Critical conditions for enabling CSO development effectiveness: government policies and practices ',
     'extra_3_2'=>'Step 1 contextualising CSO development effectiveness ',
