@@ -8,7 +8,10 @@
 if (!defined('_ECRIRE_INC_VERSION')) return;
 include_spip('inc/cextras_autoriser');
 
-restreindre_extras('article', array('guidance','how_to_analyse_context','how_to_analyse_org_aspects','suggested_objectives','activities','in_practice','voices','other_ressources'), array(2,3));
+if(function_exists('restreindre_extras')){
+    restreindre_extras('article', array('guidance','how_to_analyse_context','how_to_analyse_org_aspects','suggested_objectives','activities','in_practice','voices','other_ressources'), array(2,3));
+}
+
 
 
 function is_wiki($id_rubrique,$options=''){
